@@ -73,9 +73,13 @@ elsif user_input.count("2") >= 1 # querey user which team to show wins, show win
     puts "Oakland Athletics or Philadelphia Athletics?"
     team_select = gets.chomp.to_s.downcase
   end
+  if team_select == "los angeles"
+    puts "Los Angeles Angeles or Los Angeles Dodgers?"
+    team_select = gets.chomp.to_s.downcase
+  end
 
   r = /\b#{team_select}\b/i
-  winners = File.read("winners.txt").scan(r).count
+  winners = File.read("teams.txt").scan(r).count
   win_amount += winners
 
 
